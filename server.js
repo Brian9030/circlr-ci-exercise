@@ -1,12 +1,11 @@
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
+const express = require('express')
+const app = express()
+const port = 5000
 
-async function main() {
-  while(true) {
-    console.log('Containers rule!');
-    await sleep(5000);
-  }
-}
+app.get('/', (req, res) => {
+  res.send('Horray! Your Express server is up and running.')
+})
 
-main();
+app.listen(port, () => {
+  console.log(`Express app listening on port ${port}`)
+})

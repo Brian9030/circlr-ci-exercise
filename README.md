@@ -1,20 +1,23 @@
-# Overview
+# cd0354-monolith-to-microservices-circleci-exercise
+A sample node application to showcase the use of CircleCI
 
-This is a very simple, bare-bones NodeJS project created for you to use with Docker.
 
-## Local Setup
+## How to build on local?
+Ensure that you have Node v18.15.0 or higher installed on your local machine.
+```bash
+node --version
+```
 
-**_Note_**: This is only needed if you want to run the app locally. You don't need to install the dependencies or run the server if you are running the code inside a Docker container.
+Install the dependencies.
+```bash
+npm install
+```
 
-- Install dependencies: `npm install`
-- Run server: `node server.js`
-
-## Container Setup
-
-- Build image: `docker build .`
-- Run container with image: `docker run {image_id}` where `image_id` can be retrieved by running `docker images` and found under the column `IMAGE ID`
-- You can use the `-d` flag to run the container in the background. This will enable you to run other commands in your terminal while the container is running.
-
-## Container Teardown
-
-- Remove container: `docker kill {container_id}` where `container_id` can be retrieved by running `docker ps` and found under the column `CONTAINER ID`
+Navigate to the current application root directory, and start the server.
+```bash
+# Development mode
+npm run dev
+# Prod mode
+npm run start
+```
+If everything goes well, the server will serve the application at http://localhost:5000/
